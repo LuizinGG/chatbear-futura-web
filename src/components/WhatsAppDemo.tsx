@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,18 +9,6 @@ export function WhatsAppDemo() {
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   
-  const formatPhone = (phone: string) => {
-    // Remove any non-digit characters
-    const digits = phone.replace(/\D/g, "");
-    
-    // Ensure it starts with 55 (Brazil)
-    if (!digits.startsWith("55")) {
-      return "55" + digits;
-    }
-    
-    return digits;
-  };
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -30,9 +17,7 @@ export function WhatsAppDemo() {
       return;
     }
     
-    const formattedPhone = formatPhone(phone);
-    
-    if (formattedPhone.length < 12) {
+    if (phone.replace(/\D/g, "").length < 10) {
       toast.error("Número de telefone inválido. Inclua DDD e número");
       return;
     }
@@ -40,27 +25,26 @@ export function WhatsAppDemo() {
     setIsLoading(true);
     
     try {
-      const message = `Oi ${name}! 👋 Seja muito bem-vindo ao ChatBear! 🚀\n\nJá estou aqui pra te mostrar como podemos transformar o seu atendimento e aumentar suas vendas.\n\nPode mandar sua dúvida!`;
-      
-      const response = await fetch("https://api.wts.chat/", {
+      // Agora fazemos a chamada para o nosso endpoint de proxy
+      const response = await fetch("/api/send-whatsapp", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer pn_gRF7EbcE6p0bCzSxNoTE4AhwbkUIkmqGrq3e23c9Q",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          phone: formattedPhone,
-          message: message
+          name,
+          phone
         })
       });
       
       if (response.ok) {
+        const result = await response.json();
         toast.success("Mensagem enviada! Verifique seu WhatsApp");
         setName("");
         setPhone("");
       } else {
         const error = await response.json();
-        throw new Error(error.message || "Erro ao enviar mensagem");
+        throw new Error(error.error || "Erro ao enviar mensagem");
       }
     } catch (error) {
       console.error("Erro:", error);
