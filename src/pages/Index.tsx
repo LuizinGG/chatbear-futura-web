@@ -12,17 +12,16 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
-  // Check for user's preferred color scheme on page load
+  // Set dark mode as default on page load
   useEffect(() => {
-    // Check if user prefers dark mode
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
+    // Always set to dark mode by default
+    document.documentElement.classList.add('dark');
+    
     // Update the page title
-    document.title = "ChatBear - Automação Inteligente com Chatbots e IA";
+    document.title = "ChatBear - Automação inteligente com chatbots e IA";
+    
+    // Dispatch initial theme event for logo
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: 'dark' }));
   }, []);
 
   return (

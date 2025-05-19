@@ -8,21 +8,21 @@ export function Testimonials() {
   const testimonials = [
     {
       name: "Ana Silva",
-      position: "Diretora de Operações, TechSoft",
+      position: "Diretora de operações, TechSoft",
       content: "O ChatBear transformou completamente nossa operação de atendimento. Conseguimos reduzir o tempo de resposta em 70% e aumentar a satisfação dos clientes em 25%. A implantação foi rápida e o suporte técnico é excelente.",
-      image: "https://i.pravatar.cc/100?img=4"
+      image: "https://s2-valor.glbimg.com/A7zxU12uWKBt0BmAxoXxXW5ywaY=/0x0:683x1024/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/6/p/DJ5HMHShyLVkCCW2Igtw/3bdbef74-27cf-456d-a88c-49d37758780c.jpeg"
     },
     {
       name: "Carlos Mendes",
       position: "CEO, Inovare Ltda",
       content: "Depois de implementar o ChatBear para automatizar nossos processos de documentação, conseguimos economizar cerca de 15 horas semanais por funcionário. O ROI foi alcançado em menos de 3 meses. Recomendo fortemente.",
-      image: "https://i.pravatar.cc/100?img=5"
+      image: "https://i.pinimg.com/736x/87/92/90/8792906a9a41234bd90ceec2d3f4d3e9.jpg"
     },
     {
       name: "Márcia Oliveira",
       position: "Gerente de TI, Global Solutions",
       content: "A integração do ChatBear com nossos sistemas existentes foi surpreendentemente fácil. A capacidade de análise de dados nos deu insights que nunca teríamos descoberto manualmente, resultando em decisões mais estratégicas.",
-      image: "https://i.pravatar.cc/100?img=6"
+      image: "https://i.pinimg.com/originals/1c/3f/f8/1c3ff84664dd06e42f7dc3593a3b71e5.jpg"
     }
   ];
   
@@ -39,7 +39,7 @@ export function Testimonials() {
     <section id="testimonials" className="py-20 bg-secondary/50 dark:bg-secondary/10">
       <div className="container-section">
         <h2 className="section-title">
-          O Que Nossos <span className="text-chatbear-green-500">Clientes</span> Dizem
+          O que nossos <span className="text-chatbear-green-500">clientes</span> dizem
         </h2>
         
         <div className="relative mt-14">

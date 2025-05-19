@@ -42,7 +42,7 @@ export function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Vamos Conversar Sobre <span className="text-chatbear-green-300">Automação Inteligente</span>
+              Vamos conversar sobre <span className="text-chatbear-green-300">automação inteligente</span>
             </h2>
             
             <p className="text-chatbear-green-50 mb-8">
@@ -70,7 +70,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-medium text-white">Telefone</h3>
-                  <p className="text-chatbear-green-200">+55 (11) 4321-1234</p>
+                  <p className="text-chatbear-green-200">(62) 98158-6424</p>
                 </div>
               </div>
               
@@ -82,7 +82,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-medium text-white">Endereço</h3>
-                  <p className="text-chatbear-green-200">Av. Paulista, 1000 - São Paulo, SP</p>
+                  <p className="text-chatbear-green-200">Av. Olinda, 960 - Sala 312/313, Business Tower - Park Lozandes, Goiânia - GO, 74884-120</p>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export function ContactForm() {
                   className="w-full bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+                  {isSubmitting ? "Enviando..." : "Enviar mensagem"}
                 </Button>
               </div>
             </form>

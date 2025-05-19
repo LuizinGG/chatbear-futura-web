@@ -7,7 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   // Check for current theme
   useEffect(() => {
@@ -61,7 +61,7 @@ export function Header() {
           <div className="ml-4 flex items-center space-x-2">
             <ThemeToggle />
             <Button className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white">
-              Começar Agora
+              Começar agora
             </Button>
           </div>
         </nav>
@@ -90,7 +90,7 @@ export function Header() {
             <a href="#faq" className="block py-2 text-foreground hover:text-chatbear-green-500">FAQ</a>
             <a href="#contact" className="block py-2 text-foreground hover:text-chatbear-green-500">Contato</a>
             <Button className="w-full bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white mt-2">
-              Começar Agora
+              Começar agora
             </Button>
           </div>
         </div>

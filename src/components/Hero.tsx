@@ -15,11 +15,11 @@ export function Hero() {
           <div className="flex flex-col space-y-6 animate-fade-in-left">
             <div>
               <span className="inline-block py-1 px-3 rounded-full bg-chatbear-green-50 dark:bg-chatbear-green-900/30 text-chatbear-green-600 dark:text-chatbear-green-300 text-sm font-medium mb-4">
-                Inteligência Artificial para Negócios
+                Inteligência artificial para negócios
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              Automação Inteligente para <span className="text-chatbear-green-500">Transformar</span> o seu Negócio
+              Automação inteligente para <span className="text-chatbear-green-500">transformar</span> o seu negócio
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
               Potencialize sua empresa com chatbots personalizados, automação de processos, relatórios analíticos e gerenciamento com Kanban para atendimento 24/7 e decisões baseadas em dados.
@@ -27,18 +27,18 @@ export function Hero() {
             
             <div className="flex flex-wrap space-x-0 space-y-3 sm:space-x-3 sm:space-y-0 pt-2">
               <Button size="lg" className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white w-full sm:w-auto">
-                Agendar Demonstração
+                Agendar demonstração
               </Button>
               <Button size="lg" variant="outline" className="border-chatbear-green-500 text-chatbear-green-600 hover:bg-chatbear-green-50 dark:text-chatbear-green-400 dark:hover:bg-chatbear-green-900/20 w-full sm:w-auto">
-                Conhecer Soluções
+                Conhecer soluções
               </Button>
             </div>
             
             <div className="flex items-center space-x-4 pt-4">
               <div className="flex -space-x-2">
-                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pravatar.cc/100?img=1" />
-                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pravatar.cc/100?img=2" />
-                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pravatar.cc/100?img=3" />
+                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pinimg.com/736x/19/95/13/1995135ab3279c1a65de81bf3c3b6ac9.jpg" />
+                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pinimg.com/736x/9a/77/d3/9a77d34ec81db97c5a45f75873326d6a.jpg" />
+                <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pinimg.com/736x/ca/f0/00/caf00053d9b5ddd7a2d2ebd399068eea.jpg" />
               </div>
               <div className="text-sm">
                 <span className="text-muted-foreground">Mais de 10.000 empresas já utilizam</span>
@@ -50,7 +50,7 @@ export function Hero() {
             <div className="relative bg-gradient-to-br from-chatbear-green-100 to-chatbear-green-50 dark:from-chatbear-green-900/40 dark:to-chatbear-green-800/10 p-2 rounded-2xl shadow-xl">
               <div className="rounded-xl overflow-hidden shadow-sm">
                 <img 
-                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop"
+                  src="https://i.imgur.com/Ww2Fo12.jpeg"
                   alt="ChatBear Interface" 
                   className="w-full h-auto rounded-lg"
                 />

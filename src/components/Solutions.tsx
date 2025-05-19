@@ -10,25 +10,25 @@ export function Solutions() {
       title: "ChatBear Atendimento",
       description: "Chatbots que conversam como humanos, respondem dúvidas e guiam clientes até a compra. Integração com WhatsApp, Instagram e outras plataformas para um atendimento instantâneo e personalizado disponível 24/7.",
       features: ["Respostas em tempo real", "Integração omnichannel", "Qualificação automática de leads", "Atendimento 24/7"],
-      image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&auto=format&fit=crop"
+      image: "https://i.imgur.com/CtBL40T.jpeg"
     },
     {
       title: "ChatBear Automação",
       description: "Automatize fluxos de trabalho como envio de mensagens, follow-ups e agendamentos. Reduza o tempo de tarefas manuais em até 70%, permitindo que suas equipes foquem em prioridades estratégicas.",
       features: ["Automação de processos", "Redução de até 70% em tarefas manuais", "Workflows personalizáveis", "Integração com CRMs"],
-      image: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&fit=crop"
+      image: "https://i.imgur.com/3mYIgGH.jpeg"
     },
     {
       title: "ChatBear Analytics",
       description: "Obtenha relatórios detalhados sobre interações, conversões e comportamento dos clientes. Tome decisões baseadas em dados reais em tempo real para otimizar resultados e estratégias de negócio.",
       features: ["Dashboards personalizáveis", "Insights acionáveis", "Métricas de conversão", "Análise comportamental"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop"
+      image: "https://i.imgur.com/rjbOkPa.png"
     },
     {
       title: "ChatBear Kanban",
       description: "Organize tarefas e projetos com quadros Kanban integrados que permitem a visualização do progresso em tempo real. Otimize a gestão de equipe e projetos para maior produtividade.",
       features: ["Quadros Kanban intuitivos", "Gestão visual de tarefas", "Acompanhamento em tempo real", "Delegação inteligente"],
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&auto=format&fit=crop"
+      image: "https://i.imgur.com/J5hL3p2.jpeg"
     }
   ];
 
@@ -38,7 +38,7 @@ export function Solutions() {
       
       <div className="container-section relative z-10">
         <h2 className="section-title">
-          Nossas <span className="text-chatbear-green-500">Soluções</span> Inovadoras
+          Nossas <span className="text-chatbear-green-500">soluções</span> inovadoras
         </h2>
         
         <p className="section-subtitle">
