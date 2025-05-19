@@ -8,7 +8,7 @@ import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import { Partners } from "@/components/Partners";
 import { FAQ } from "@/components/FAQ";
-import { ContactForm } from "@/components/ContactForm";
+import { WhatsAppDemo } from "@/components/WhatsAppDemo";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -35,7 +35,7 @@ const Index = () => {
         <Testimonials />
         <Partners />
         <FAQ />
-        <ContactForm />
+        <WhatsAppDemo />
       </main>
       <Footer />
     </div>
