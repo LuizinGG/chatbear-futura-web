@@ -22,6 +22,9 @@ export function ThemeToggle() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+
+    // Dispatch custom event for logo change
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: newTheme }));
   };
 
   return (

@@ -22,7 +22,7 @@ const Index = () => {
     }
 
     // Update the page title
-    document.title = "ChatBear - Automação Inteligente";
+    document.title = "ChatBear - Automação Inteligente com Chatbots e IA";
   }, []);
 
   return (

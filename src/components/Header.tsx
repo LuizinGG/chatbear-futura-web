@@ -18,8 +18,18 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
     
+    const handleThemeChange = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setTheme(customEvent.detail);
+    };
+    
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("themeChange", handleThemeChange);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("themeChange", handleThemeChange);
+    };
   }, []);
 
   return (

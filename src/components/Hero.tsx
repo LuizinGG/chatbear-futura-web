@@ -22,7 +22,7 @@ export function Hero() {
               Automação Inteligente para <span className="text-chatbear-green-500">Transformar</span> o seu Negócio
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-              Potencialize sua empresa com soluções de IA que automatizam processos e aumentam a produtividade. O ChatBear conecta pessoas e tecnologia de forma intuitiva.
+              Potencialize sua empresa com chatbots personalizados, automação de processos, relatórios analíticos e gerenciamento com Kanban para atendimento 24/7 e decisões baseadas em dados.
             </p>
             
             <div className="flex flex-wrap space-x-0 space-y-3 sm:space-x-3 sm:space-y-0 pt-2">
@@ -64,8 +64,8 @@ export function Hero() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Automação em tempo real</p>
-                    <p className="font-medium text-sm">+45% de produtividade</p>
+                    <p className="text-xs text-muted-foreground">Atendimento 24/7</p>
+                    <p className="font-medium text-sm">+70% de economia de tempo</p>
                   </div>
                 </div>
               </div>
@@ -79,8 +79,8 @@ export function Hero() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">ROI comprovado</p>
-                    <p className="font-medium text-sm">98% de satisfação</p>
+                    <p className="text-xs text-muted-foreground">Aumento na retenção</p>
+                    <p className="font-medium text-sm">80% de satisfação</p>
                   </div>
                 </div>
               </div>

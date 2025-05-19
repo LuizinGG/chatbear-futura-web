@@ -8,26 +8,26 @@ export function Solutions() {
   const solutions = [
     {
       title: "ChatBear Atendimento",
-      description: "Automatize seu atendimento ao cliente com respostas precisas e personalizadas. Nossa IA aprende com cada interação, melhorando continuamente a experiência do usuário.",
-      features: ["Respostas em tempo real", "Integração omnichannel", "Personalização avançada", "Escalonamento inteligente"],
+      description: "Chatbots que conversam como humanos, respondem dúvidas e guiam clientes até a compra. Integração com WhatsApp, Instagram e outras plataformas para um atendimento instantâneo e personalizado disponível 24/7.",
+      features: ["Respostas em tempo real", "Integração omnichannel", "Qualificação automática de leads", "Atendimento 24/7"],
       image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&auto=format&fit=crop"
     },
     {
-      title: "ChatBear Documentos",
-      description: "Extraia informações, classifique e processe documentos automaticamente. Reduza erros e acelere a análise de contratos, faturas e formulários.",
-      features: ["Extração inteligente de dados", "OCR avançado", "Classificação automática", "Validação de documentos"],
+      title: "ChatBear Automação",
+      description: "Automatize fluxos de trabalho como envio de mensagens, follow-ups e agendamentos. Reduza o tempo de tarefas manuais em até 70%, permitindo que suas equipes foquem em prioridades estratégicas.",
+      features: ["Automação de processos", "Redução de até 70% em tarefas manuais", "Workflows personalizáveis", "Integração com CRMs"],
       image: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&fit=crop"
     },
     {
       title: "ChatBear Analytics",
-      description: "Transforme seus dados em insights acionáveis. Obtenha relatórios detalhados e previsões precisas para tomar decisões informadas.",
-      features: ["Dashboards personalizáveis", "Previsões baseadas em IA", "Alertas de anomalias", "Visualização de dados avançada"],
+      description: "Obtenha relatórios detalhados sobre interações, conversões e comportamento dos clientes. Tome decisões baseadas em dados reais em tempo real para otimizar resultados e estratégias de negócio.",
+      features: ["Dashboards personalizáveis", "Insights acionáveis", "Métricas de conversão", "Análise comportamental"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop"
     },
     {
-      title: "ChatBear Workflow",
-      description: "Automatize fluxos de trabalho complexos e aumente a produtividade da sua equipe com nossa plataforma de orquestração de processos.",
-      features: ["Automação de processos", "Integração com ferramentas existentes", "Monitoramento em tempo real", "Escalonamento inteligente"],
+      title: "ChatBear Kanban",
+      description: "Organize tarefas e projetos com quadros Kanban integrados que permitem a visualização do progresso em tempo real. Otimize a gestão de equipe e projetos para maior produtividade.",
+      features: ["Quadros Kanban intuitivos", "Gestão visual de tarefas", "Acompanhamento em tempo real", "Delegação inteligente"],
       image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&auto=format&fit=crop"
     }
   ];
@@ -42,7 +42,7 @@ export function Solutions() {
         </h2>
         
         <p className="section-subtitle">
-          Desenvolvemos tecnologias avançadas de IA adaptadas às necessidades específicas do seu negócio.
+          Chatbots personalizados, automações inteligentes, relatórios analíticos e gerenciamento com Kanban para transformar seu negócio.
         </p>
         
         <div className="mt-12">
