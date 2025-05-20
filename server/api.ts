@@ -38,7 +38,7 @@ export async function sendWhatsApp(req: Request, res: Response) {
 
     // Verificar resposta da API externa
     if (!apiResponse.ok) {
-      const errorData = await apiResponse.json();
+      const errorData = await apiResponse.json() as { message?: string };
       throw new Error(errorData.message || 'Erro ao enviar mensagem para API externa');
     }
 

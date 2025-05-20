@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { sendWhatsApp } from "./server/api";
+import type { Request, Response, NextFunction } from "express";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -14,12 +15,12 @@ export default defineConfig(({ mode }) => ({
       // Se você tem outras configurações de proxy, mantenha-as aqui
     },
     middleware: [
-      (req, res, next) => {
+      (req: Request, res: Response, next: NextFunction) => {
         // Rota específica para o API proxy
         if (req.method === 'POST' && req.url === '/api/send-whatsapp') {
           // Primeiro coletamos o body da requisição
           let body = '';
-          req.on('data', chunk => {
+          req.on('data', (chunk: Buffer) => {
             body += chunk.toString();
           });
           
