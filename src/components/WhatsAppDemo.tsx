@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,27 @@ export function WhatsAppDemo() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Função para formatar o número de telefone na interface
+  const formatPhoneNumber = (value: string) => {
+    const digits = value.replace(/\D/g, "");
+    
+    if (digits.length <= 2) {
+      return `(${digits}`;
+    } 
+    else if (digits.length <= 6) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    } 
+    else if (digits.length <= 11) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+    }
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedPhone = formatPhoneNumber(e.target.value);
+    setPhone(formattedPhone);
+  };
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +47,7 @@ export function WhatsAppDemo() {
     setIsLoading(true);
     
     try {
-      // Agora fazemos a chamada para o nosso endpoint de proxy
+      // Fazemos a chamada para o endpoint de proxy
       const response = await fetch("/api/send-whatsapp", {
         method: "POST",
         headers: {
@@ -76,6 +98,7 @@ export function WhatsAppDemo() {
                 placeholder="João Silva"
                 className="w-full"
                 disabled={isLoading}
+                autoComplete="name"
               />
             </div>
             
@@ -87,10 +110,11 @@ export function WhatsAppDemo() {
                 id="phone"
                 type="tel"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={handlePhoneChange}
                 placeholder="(00) 00000-0000"
                 className="w-full"
                 disabled={isLoading}
+                autoComplete="tel"
               />
               <p className="text-xs text-muted-foreground mt-1">
                 Exemplo: (62) 98158-6424
