@@ -52,7 +52,8 @@ export function WhatsAppDemo() {
       const response = await fetch("/api/send-whatsapp", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({
           name,
@@ -62,29 +63,26 @@ export function WhatsAppDemo() {
       
       console.log("Status da resposta:", response.status);
       
-      // Verificar se a resposta é texto simples ou JSON
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        try {
-          const result = await response.json();
-          console.log("Resposta de sucesso:", result);
-          
-          if (response.ok) {
-            toast.success("Mensagem enviada! Verifique seu WhatsApp");
-            setName("");
-            setPhone("");
-          } else {
-            throw new Error(result.error || "Erro ao enviar mensagem");
-          }
-        } catch (jsonError) {
-          console.error("Erro ao parsear JSON da resposta:", jsonError);
-          throw new Error("Formato de resposta inválido do servidor");
+      // Tentar obter o corpo da resposta como texto primeiro
+      const responseText = await response.text();
+      console.log("Resposta bruta:", responseText);
+      
+      // Tentar parsear como JSON
+      let result;
+      try {
+        result = JSON.parse(responseText);
+        console.log("Resposta parseada:", result);
+        
+        if (response.ok && result.success) {
+          toast.success("Mensagem enviada! Verifique seu WhatsApp");
+          setName("");
+          setPhone("");
+        } else {
+          throw new Error(result.error || "Erro ao enviar mensagem");
         }
-      } else {
-        // Se não for JSON, tratar como texto
-        const textResponse = await response.text();
-        console.error("Resposta não-JSON recebida:", textResponse);
-        throw new Error("Resposta inesperada do servidor");
+      } catch (jsonError) {
+        console.error("Erro ao parsear resposta como JSON:", jsonError);
+        throw new Error("Formato de resposta inválido do servidor");
       }
     } catch (error) {
       console.error("Erro na requisição:", error);

@@ -26,7 +26,7 @@ export async function sendWhatsApp(req: Request, res: Response) {
 
     console.log("Enviando para API - Contato:", { phone: `+${formattedPhone}`, name });
 
-    // Enviar mensagem usando o endpoint de mensagem simples - usando diretamente o endpoint text/send
+    // Enviar mensagem usando o endpoint de mensagem simples
     const messageResponse = await fetch(`${WTS_API_URL}/message/text/send`, {
       method: "POST",
       headers: {
@@ -38,11 +38,6 @@ export async function sendWhatsApp(req: Request, res: Response) {
         message: `Oi ${name}! 👋 Seja muito bem-vindo ao ChatBear! 🚀\n\nJá estou aqui pra te mostrar como podemos transformar o seu atendimento e aumentar suas vendas.\n\nPode mandar sua dúvida!`
       }),
     });
-
-    if (!messageResponse.ok) {
-      const errorData = await messageResponse.json() as { message?: string };
-      throw new Error(errorData.message || "Erro ao enviar mensagem");
-    }
 
     const responseData = await messageResponse.json();
     console.log("Resposta da API - Mensagem:", responseData);
@@ -69,7 +64,7 @@ export default defineConfig(({ mode }) => ({
       (req: Request, res: Response, next: NextFunction) => {
         // Rota específica para o API proxy
         if (req.method === 'POST' && req.url === '/api/send-whatsapp') {
-          // Sempre definimos o content-type como JSON para evitar HTML acidental
+          // Definir headers imediatamente para garantir resposta JSON
           res.setHeader('Content-Type', 'application/json');
           
           let body = '';
@@ -78,26 +73,31 @@ export default defineConfig(({ mode }) => ({
             body += chunk.toString();
           });
           
-          req.on('end', () => {
+          req.on('end', async () => {
             try {
               console.log("Dados recebidos no servidor:", body);
               req.body = JSON.parse(body);
               console.log("Corpo parseado:", req.body);
               
-              // Chamamos nossa função de API
-              sendWhatsApp(req, res).catch(err => {
-                console.error("Erro na função sendWhatsApp:", err);
+              try {
+                // Chamamos nossa função de API e esperamos pela resposta
+                await sendWhatsApp(req, res);
+              } catch (apiError) {
+                console.error("Erro na função sendWhatsApp:", apiError);
+                // Garantir que enviamos uma resposta JSON válida
                 res.statusCode = 500;
-                res.setHeader('Content-Type', 'application/json');
-                res.end(JSON.stringify({ error: "Erro interno ao processar a requisição" }));
-              });
-            } catch (error) {
-              console.error('Erro ao parsear JSON:', error);
+                res.end(JSON.stringify({ 
+                  error: apiError instanceof Error ? apiError.message : "Erro interno ao processar a requisição" 
+                }));
+              }
+            } catch (parseError) {
+              console.error('Erro ao parsear JSON:', parseError);
               res.statusCode = 400;
-              res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({ error: 'JSON inválido' }));
             }
           });
+          
+          // Importante: não chamar next() aqui pois já estamos enviando uma resposta
         } else {
           next();
         }
