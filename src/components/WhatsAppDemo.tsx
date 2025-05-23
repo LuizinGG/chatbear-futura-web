@@ -62,22 +62,29 @@ export function WhatsAppDemo() {
       
       console.log("Status da resposta:", response.status);
       
-      if (response.ok) {
-        const result = await response.json();
-        console.log("Resposta de sucesso:", result);
-        toast.success("Mensagem enviada! Verifique seu WhatsApp");
-        setName("");
-        setPhone("");
-      } else {
-        let errorMessage = "Erro ao enviar mensagem";
+      // Verificar se a resposta é texto simples ou JSON
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
         try {
-          const error = await response.json();
-          console.error("Erro detalhado:", error);
-          errorMessage = error.error || errorMessage;
-        } catch (e) {
-          console.error("Não foi possível parsear resposta de erro:", e);
+          const result = await response.json();
+          console.log("Resposta de sucesso:", result);
+          
+          if (response.ok) {
+            toast.success("Mensagem enviada! Verifique seu WhatsApp");
+            setName("");
+            setPhone("");
+          } else {
+            throw new Error(result.error || "Erro ao enviar mensagem");
+          }
+        } catch (jsonError) {
+          console.error("Erro ao parsear JSON da resposta:", jsonError);
+          throw new Error("Formato de resposta inválido do servidor");
         }
-        throw new Error(errorMessage);
+      } else {
+        // Se não for JSON, tratar como texto
+        const textResponse = await response.text();
+        console.error("Resposta não-JSON recebida:", textResponse);
+        throw new Error("Resposta inesperada do servidor");
       }
     } catch (error) {
       console.error("Erro na requisição:", error);

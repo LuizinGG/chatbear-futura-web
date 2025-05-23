@@ -26,28 +26,7 @@ export async function sendWhatsApp(req: Request, res: Response) {
 
     console.log("Enviando para API - Contato:", { phone: `+${formattedPhone}`, name });
 
-    // Primeiro, criar ou atualizar o contato
-    const contactResponse = await fetch(`${WTS_API_URL}/contact`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        phone: `+${formattedPhone}`,
-        name
-      }),
-    });
-
-    if (!contactResponse.ok) {
-      const errorData = await contactResponse.json() as { message?: string };
-      throw new Error(errorData.message || "Erro ao criar contato");
-    }
-
-    const contactData = await contactResponse.json();
-    console.log("Resposta da API - Contato:", contactData);
-
-    // Enviar mensagem usando o endpoint de mensagem simples
+    // Enviar mensagem usando o endpoint de mensagem simples - usando diretamente o endpoint text/send
     const messageResponse = await fetch(`${WTS_API_URL}/message/text/send`, {
       method: "POST",
       headers: {
@@ -90,6 +69,9 @@ export default defineConfig(({ mode }) => ({
       (req: Request, res: Response, next: NextFunction) => {
         // Rota específica para o API proxy
         if (req.method === 'POST' && req.url === '/api/send-whatsapp') {
+          // Sempre definimos o content-type como JSON para evitar HTML acidental
+          res.setHeader('Content-Type', 'application/json');
+          
           let body = '';
           
           req.on('data', (chunk: Buffer) => {
