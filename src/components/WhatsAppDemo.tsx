@@ -47,7 +47,8 @@ export function WhatsAppDemo() {
     setIsLoading(true);
     
     try {
-      // Fazemos a chamada para o endpoint de proxy
+      console.log("Enviando dados:", { name, phone });
+      
       const response = await fetch("/api/send-whatsapp", {
         method: "POST",
         headers: {
@@ -59,18 +60,28 @@ export function WhatsAppDemo() {
         })
       });
       
+      console.log("Status da resposta:", response.status);
+      
       if (response.ok) {
         const result = await response.json();
+        console.log("Resposta de sucesso:", result);
         toast.success("Mensagem enviada! Verifique seu WhatsApp");
         setName("");
         setPhone("");
       } else {
-        const error = await response.json();
-        throw new Error(error.error || "Erro ao enviar mensagem");
+        let errorMessage = "Erro ao enviar mensagem";
+        try {
+          const error = await response.json();
+          console.error("Erro detalhado:", error);
+          errorMessage = error.error || errorMessage;
+        } catch (e) {
+          console.error("Não foi possível parsear resposta de erro:", e);
+        }
+        throw new Error(errorMessage);
       }
     } catch (error) {
-      console.error("Erro:", error);
-      toast.error("Não foi possível enviar a mensagem. Tente novamente mais tarde.");
+      console.error("Erro na requisição:", error);
+      toast.error(error instanceof Error ? error.message : "Não foi possível enviar a mensagem. Tente novamente mais tarde.");
     } finally {
       setIsLoading(false);
     }

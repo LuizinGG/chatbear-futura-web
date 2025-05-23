@@ -24,6 +24,8 @@ export async function sendWhatsApp(req: Request, res: Response) {
     const WTS_API_URL = "https://api.wts.chat";
     const TOKEN = "pn_gRF7EbcE6p0bCzSxNoTE4AhwbkUIkmqGrq3e23c9Q";
 
+    console.log("Enviando para API - Contato:", { phone: `+${formattedPhone}`, name });
+
     // Primeiro, criar ou atualizar o contato
     const contactResponse = await fetch(`${WTS_API_URL}/contact`, {
       method: "POST",
@@ -41,6 +43,9 @@ export async function sendWhatsApp(req: Request, res: Response) {
       const errorData = await contactResponse.json() as { message?: string };
       throw new Error(errorData.message || "Erro ao criar contato");
     }
+
+    const contactData = await contactResponse.json();
+    console.log("Resposta da API - Contato:", contactData);
 
     // Enviar mensagem usando o endpoint de mensagem simples
     const messageResponse = await fetch(`${WTS_API_URL}/message/text/send`, {
@@ -61,6 +66,8 @@ export async function sendWhatsApp(req: Request, res: Response) {
     }
 
     const responseData = await messageResponse.json();
+    console.log("Resposta da API - Mensagem:", responseData);
+    
     return res.status(200).json({
       success: true,
       message: "Mensagem enviada com sucesso!",
@@ -79,28 +86,33 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    proxy: {
-      // Se você tem outras configurações de proxy, mantenha-as aqui
-    },
     middleware: [
       (req: Request, res: Response, next: NextFunction) => {
         // Rota específica para o API proxy
         if (req.method === 'POST' && req.url === '/api/send-whatsapp') {
-          // Primeiro coletamos o body da requisição
           let body = '';
+          
           req.on('data', (chunk: Buffer) => {
             body += chunk.toString();
           });
           
           req.on('end', () => {
             try {
-              // Parseamos o JSON
+              console.log("Dados recebidos no servidor:", body);
               req.body = JSON.parse(body);
+              console.log("Corpo parseado:", req.body);
+              
               // Chamamos nossa função de API
-              sendWhatsApp(req, res);
+              sendWhatsApp(req, res).catch(err => {
+                console.error("Erro na função sendWhatsApp:", err);
+                res.statusCode = 500;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ error: "Erro interno ao processar a requisição" }));
+              });
             } catch (error) {
               console.error('Erro ao parsear JSON:', error);
               res.statusCode = 400;
+              res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({ error: 'JSON inválido' }));
             }
           });
