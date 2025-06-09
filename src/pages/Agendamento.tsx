@@ -1,8 +1,8 @@
-
 import { ArrowLeft, Calendar, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 const Agendamento = () => {
   const navigate = useNavigate();
@@ -109,6 +109,8 @@ const Agendamento = () => {
           </div>
         </div>
       </main>
+
+      <FloatingWhatsApp />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import { Partners } from "@/components/Partners";
 import { FAQ } from "@/components/FAQ";
 import { CTAAgendamento } from "@/components/CTAAgendamento";
 import { Footer } from "@/components/Footer";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   // Set light mode as default on page load
@@ -38,6 +39,7 @@ const Index = () => {
         <CTAAgendamento />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
