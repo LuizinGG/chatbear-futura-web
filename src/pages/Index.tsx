@@ -12,16 +12,16 @@ import { CTAAgendamento } from "@/components/CTAAgendamento";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
-  // Set dark mode as default on page load
+  // Set light mode as default on page load
   useEffect(() => {
-    // Always set to dark mode by default
-    document.documentElement.classList.add('dark');
+    // Always set to light mode by default
+    document.documentElement.classList.remove('dark');
     
     // Update the page title
     document.title = "ChatBear - Automação inteligente com chatbots e IA";
     
     // Dispatch initial theme event for logo
-    window.dispatchEvent(new CustomEvent('themeChange', { detail: 'dark' }));
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
   }, []);
 
   return (

@@ -2,9 +2,28 @@
 import { ArrowLeft, Calendar, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Agendamento = () => {
   const navigate = useNavigate();
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  // Check for current theme
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setTheme(isDarkMode ? "dark" : "light");
+    
+    const handleThemeChange = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setTheme(customEvent.detail);
+    };
+    
+    window.addEventListener("themeChange", handleThemeChange);
+    
+    return () => {
+      window.removeEventListener("themeChange", handleThemeChange);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background dark:bg-chatbear-dark-950">
@@ -21,7 +40,7 @@ const Agendamento = () => {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <img 
-              src="https://i.imgur.com/sOP8UWA.png"
+              src={theme === "dark" ? "https://i.imgur.com/sOP8UWA.png" : "https://i.imgur.com/3yb5C4O.png"}
               alt="ChatBear Logo" 
               className="h-8 md:h-10" 
             />
@@ -76,7 +95,7 @@ const Agendamento = () => {
               <h3 className="text-2xl font-bold text-center mb-6 text-foreground">
                 Escolha o melhor horário para você
               </h3>
-              <div className="calendar-container rounded-lg overflow-hidden shadow-lg">
+              <div className={`calendar-container rounded-lg overflow-hidden shadow-lg ${theme === 'dark' ? 'bg-white' : ''}`}>
                 <iframe 
                   src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0cOR4v7gJnMoQmGow_8ds0c7ekuVD1CmXhhmyQz7vC9BlwN9CEIUMvjjFCEGJw2gDGPRSWfGnv?gv=true" 
                   style={{ border: 0 }} 
