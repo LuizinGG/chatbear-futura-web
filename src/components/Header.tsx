@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,6 +31,13 @@ export function Header() {
     };
   }, []);
 
+  const handleWhatsAppContact = () => {
+    const message = encodeURIComponent(
+      "Olá! Gostaria de começar a usar o ChatBear para automatizar meu negócio. Podem me ajudar?"
+    );
+    window.open(`https://wa.me/5562981586424?text=${message}`, '_blank');
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -57,10 +63,12 @@ export function Header() {
           <a href="#solutions" className="text-foreground hover:text-chatbear-green-500 transition-colors">Soluções</a>
           <a href="#testimonials" className="text-foreground hover:text-chatbear-green-500 transition-colors">Depoimentos</a>
           <a href="#faq" className="text-foreground hover:text-chatbear-green-500 transition-colors">FAQ</a>
-          <a href="#contact" className="text-foreground hover:text-chatbear-green-500 transition-colors">Contato</a>
           <div className="ml-4 flex items-center space-x-2">
             <ThemeToggle />
-            <Button className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white">
+            <Button 
+              onClick={handleWhatsAppContact}
+              className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white"
+            >
               Começar agora
             </Button>
           </div>
@@ -88,8 +96,10 @@ export function Header() {
             <a href="#solutions" className="block py-2 text-foreground hover:text-chatbear-green-500">Soluções</a>
             <a href="#testimonials" className="block py-2 text-foreground hover:text-chatbear-green-500">Depoimentos</a>
             <a href="#faq" className="block py-2 text-foreground hover:text-chatbear-green-500">FAQ</a>
-            <a href="#contact" className="block py-2 text-foreground hover:text-chatbear-green-500">Contato</a>
-            <Button className="w-full bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white mt-2">
+            <Button 
+              onClick={handleWhatsAppContact}
+              className="w-full bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white mt-2"
+            >
               Começar agora
             </Button>
           </div>

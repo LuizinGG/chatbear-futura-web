@@ -2,6 +2,10 @@
 export function Footer() {
   const currentYear = new Date().getFullYear();
   
+  const createWhatsAppLink = (message: string) => {
+    return `https://wa.me/5562981586424?text=${encodeURIComponent(message)}`;
+  };
+
   return (
     <footer className="bg-chatbear-dark-900 text-white py-12">
       <div className="container-section">
@@ -48,36 +52,33 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-3">Soluções</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Atendimento</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Documentos</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Analytics</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Workflow</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Integrações</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">API</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de saber mais sobre o ChatBear Atendimento para automatizar meu atendimento ao cliente.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Atendimento</a></li>
+              <li><a href={createWhatsAppLink("Olá! Tenho interesse no ChatBear Documentos para organizar e gerenciar meus arquivos com IA.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Documentos</a></li>
+              <li><a href={createWhatsAppLink("Olá! Quero conhecer o ChatBear Analytics para ter relatórios inteligentes do meu negócio.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Analytics</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de saber sobre o ChatBear Workflow para automatizar meus processos.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">ChatBear Workflow</a></li>
+              <li><a href={createWhatsAppLink("Olá! Preciso de informações sobre as integrações disponíveis do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Integrações</a></li>
+              <li><a href={createWhatsAppLink("Olá! Sou desenvolvedor e gostaria de saber mais sobre a API do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">API</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-3">Empresa</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Sobre nós</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Casos de sucesso</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Carreiras</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Parceiros</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Contato</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de saber mais sobre a empresa ChatBear e sua história.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Sobre nós</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de ser um parceiro do ChatBear. Como posso participar?")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Parceiros</a></li>
+              <li><a href={createWhatsAppLink("Olá! Tenho algumas dúvidas sobre os serviços do ChatBear. Podem me ajudar?")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Contato</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-3">Suporte</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Central de ajuda</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Documentação</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Status do sistema</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Política de privacidade</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Termos de serviço</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Cookies</a></li>
+              <li><a href={createWhatsAppLink("Olá! Preciso de ajuda técnica com o ChatBear. Podem me dar suporte?")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Central de ajuda</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de ter acesso à documentação técnica do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Documentação</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de verificar o status atual dos sistemas do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Status do sistema</a></li>
+              <li><a href={createWhatsAppLink("Olá! Tenho dúvidas sobre a política de privacidade do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Política de privacidade</a></li>
+              <li><a href={createWhatsAppLink("Olá! Gostaria de saber mais sobre os termos de serviço do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Termos de serviço</a></li>
+              <li><a href={createWhatsAppLink("Olá! Tenho dúvidas sobre a política de cookies do ChatBear.")} target="_blank" className="text-gray-300 hover:text-chatbear-green-400 text-sm">Cookies</a></li>
             </ul>
           </div>
         </div>
