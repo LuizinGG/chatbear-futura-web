@@ -8,7 +8,7 @@ export function Testimonials() {
   const testimonials = [
     {
       name: "Pedro Paulo Bessa",
-      position: "Sócio-fundadora, Nave Marketing Jurídico",
+      position: "Sócio-fundador, Nave Marketing Jurídico",
       content: "O ChatBear revolucionou nossa estratégia de captação de clientes. Com a automação de primeiro contato, conseguimos qualificar leads 24/7 e aumentar nossa conversão em 45%. A ferramenta é intuitiva e o suporte é excepcional.",
       image: "https://i.imgur.com/UibaVDs.jpeg"
     },
@@ -20,7 +20,7 @@ export function Testimonials() {
     },
     {
       name: "Dr. Igor Matheus Rezende",
-      position: "Sócio Fundador, Rezende Achar Advocacia",
+      position: "Sócio-fundador, Rezende Achar Advocacia",
       content: "O ChatBear nos ajudou a profissionalizar completamente nosso atendimento digital. Agora nossos clientes recebem respostas imediatas sobre andamentos processuais e dúvidas gerais, enquanto casos complexos são direcionados diretamente para nossa equipe.",
       image: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/339132433_920816692584161_7896688312645632829_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SCEHRChJ2B4Q7kNvwGdy5h-&_nc_oc=AdlbDZrpzRJokKpE6M61p_Bpdkm7WHtlh8FWFlitN3rbhtLqFhvyqXbLdzROqsyJD00&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=okFG6rAOVBkmI6zsOmgQbQ&oh=00_AfMx7CLoAD9vYA461cbJwr-xpNDyKX1WtRIoMi-D0hnN9A&oe=68577A30"
     }
