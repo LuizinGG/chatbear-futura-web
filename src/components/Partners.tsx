@@ -1,4 +1,3 @@
-
 export function Partners() {
   // Mock partner logos (in a real implementation, these would be actual client logos)
   const partners = [{
@@ -43,24 +42,5 @@ export function Partners() {
           <line x1="15" y1="3" x2="15" y2="21" />
         </svg>
   }];
-
-  return (
-    <section className="py-20 bg-secondary/30 dark:bg-secondary/10">
-      <div className="container-section">
-        <h2 className="section-title">
-          Confiam em <span className="text-chatbear-green-500">nossos</span> serviços
-        </h2>
-        
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
-          {partners.map((partner, index) => (
-            <div key={index} className="flex justify-center">
-              <div className="text-muted-foreground">
-                {partner.logo}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return;
 }
