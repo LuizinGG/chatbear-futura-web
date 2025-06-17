@@ -7,22 +7,22 @@ export function Testimonials() {
   
   const testimonials = [
     {
-      name: "Ana Silva",
-      position: "Diretora de operações, TechSoft",
-      content: "O ChatBear transformou completamente nossa operação de atendimento. Conseguimos reduzir o tempo de resposta em 70% e aumentar a satisfação dos clientes em 25%. A implantação foi rápida e o suporte técnico é excelente.",
-      image: "https://s2-valor.glbimg.com/A7zxU12uWKBt0BmAxoXxXW5ywaY=/0x0:683x1024/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/6/p/DJ5HMHShyLVkCCW2Igtw/3bdbef74-27cf-456d-a88c-49d37758780c.jpeg"
+      name: "Dr. Marina Nave",
+      position: "Sócia-fundadora, Nave Marketing Jurídico",
+      content: "O ChatBear revolucionou nossa estratégia de captação de clientes. Com a automação de primeiro contato, conseguimos qualificar leads 24/7 e aumentar nossa conversão em 45%. A ferramenta é intuitiva e o suporte é excepcional.",
+      image: "https://i.imgur.com/UibaVDs.jpeg"
     },
     {
-      name: "Carlos Mendes",
-      position: "CEO, Inovare Ltda",
-      content: "Depois de implementar o ChatBear para automatizar nossos processos de documentação, conseguimos economizar cerca de 15 horas semanais por funcionário. O ROI foi alcançado em menos de 3 meses. Recomendo fortemente.",
-      image: "https://i.pinimg.com/736x/87/92/90/8792906a9a41234bd90ceec2d3f4d3e9.jpg"
+      name: "Dr. Carlos Rodrigues",
+      position: "Sócio-diretor, Rodrigues e Aquino Advocacia",
+      content: "Implementamos o ChatBear para automatizar o atendimento inicial e triagem de casos. Em 3 meses, reduzimos o tempo de resposta em 80% e liberamos nossa equipe para focar em atividades estratégicas. Resultado: mais eficiência e clientes satisfeitos.",
+      image: "https://rodrigueseaquinoadvocacia.com.br/wp-content/uploads/2022/01/logo-com-fundo.jpg"
     },
     {
-      name: "Márcia Oliveira",
-      position: "Gerente de TI, Global Solutions",
-      content: "A integração do ChatBear com nossos sistemas existentes foi surpreendentemente fácil. A capacidade de análise de dados nos deu insights que nunca teríamos descoberto manualmente, resultando em decisões mais estratégicas.",
-      image: "https://i.pinimg.com/originals/1c/3f/f8/1c3ff84664dd06e42f7dc3593a3b71e5.jpg"
+      name: "Dra. Ana Rezende",
+      position: "Advogada titular, Rezende Achar Advocacia",
+      content: "O ChatBear nos ajudou a profissionalizar completamente nosso atendimento digital. Agora nossos clientes recebem respostas imediatas sobre andamentos processuais e dúvidas gerais, enquanto casos complexos são direcionados diretamente para nossa equipe.",
+      image: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/339132433_920816692584161_7896688312645632829_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SCEHRChJ2B4Q7kNvwGdy5h-&_nc_oc=AdlbDZrpzRJokKpE6M61p_Bpdkm7WHtlh8FWFlitN3rbhtLqFhvyqXbLdzROqsyJD00&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=okFG6rAOVBkmI6zsOmgQbQ&oh=00_AfMx7CLoAD9vYA461cbJwr-xpNDyKX1WtRIoMi-D0hnN9A&oe=68577A30"
     }
   ];
   
