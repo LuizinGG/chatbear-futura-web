@@ -8,7 +8,7 @@ export function Stats() {
   // Stats data
   const stats = [
     { number: 98, suffix: "%", label: "Satisfação dos Clientes" },
-    { number: 10000, suffix: "+", label: "Empresas Atendidas" },
+    { number: 1000, suffix: "+", label: "Empresas Atendidas" },
     { number: 45, suffix: "%", label: "Aumento de Produtividade" },
     { number: 500, suffix: "K+", label: "Horas Economizadas" }
   ];
