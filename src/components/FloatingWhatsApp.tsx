@@ -2,9 +2,9 @@
 export function FloatingWhatsApp() {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      "Olá! Gostaria de saber mais sobre o ChatBear e suas soluções de automação."
+      "Olá! Gostaria de saber mais sobre o ChatBear e suas soluções de automação para transformar meu negócio."
     );
-    window.open(`https://wa.me/5562981586424?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511991475367?text=${message}`, '_blank');
   };
 
   return (

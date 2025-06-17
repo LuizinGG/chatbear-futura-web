@@ -16,7 +16,7 @@ export function Solutions() {
       title: "ChatBear Automação",
       description: "Automatize fluxos de trabalho como envio de mensagens, follow-ups e agendamentos. Reduza o tempo de tarefas manuais em até 70%, permitindo que suas equipes foquem em prioridades estratégicas.",
       features: ["Automação de processos", "Redução de até 70% em tarefas manuais", "Workflows personalizáveis", "Integração com CRMs"],
-      image: "https://i.imgur.com/3mYIgGH.jpeg"
+      image: "/lovable-uploads/385ab704-914a-4ed3-9e2c-6bd836247b85.png"
     },
     {
       title: "ChatBear Analytics",
@@ -31,6 +31,13 @@ export function Solutions() {
       image: "https://i.imgur.com/J5hL3p2.jpeg"
     }
   ];
+
+  const handleSaibaMais = () => {
+    const message = encodeURIComponent(
+      "Olá! Gostaria de saber mais detalhes sobre as soluções do ChatBear e como podem ajudar meu negócio."
+    );
+    window.open(`https://wa.me/5511991475367?text=${message}`, '_blank');
+  };
 
   return (
     <section id="solutions" className="py-20 relative overflow-hidden">
@@ -94,7 +101,10 @@ export function Solutions() {
                   </ul>
                 </div>
                 
-                <Button className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white">
+                <Button 
+                  onClick={handleSaibaMais}
+                  className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white"
+                >
                   Saiba mais
                 </Button>
               </div>

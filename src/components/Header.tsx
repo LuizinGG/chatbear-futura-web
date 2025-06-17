@@ -34,9 +34,9 @@ export function Header() {
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent(
-      "Olá! Gostaria de começar a usar o ChatBear para automatizar meu negócio. Podem me ajudar?"
+      "Olá! Quero começar a usar o ChatBear para automatizar meu negócio. Podem me ajudar a dar os primeiros passos?"
     );
-    window.open(`https://wa.me/5562981586424?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511991475367?text=${message}`, '_blank');
   };
 
   return (

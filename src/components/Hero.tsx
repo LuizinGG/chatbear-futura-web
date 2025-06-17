@@ -2,6 +2,20 @@
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
+  const handleAgendarDemonstracao = () => {
+    const message = encodeURIComponent(
+      "Olá! Gostaria de agendar uma demonstração do ChatBear para conhecer melhor as soluções de automação disponíveis."
+    );
+    window.open(`https://wa.me/5511991475367?text=${message}`, '_blank');
+  };
+
+  const handleConhecerSolucoes = () => {
+    const message = encodeURIComponent(
+      "Olá! Tenho interesse em conhecer as soluções do ChatBear para automatizar meu negócio. Podem me apresentar as opções disponíveis?"
+    );
+    window.open(`https://wa.me/5511991475367?text=${message}`, '_blank');
+  };
+
   return (
     <section className="relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-chatbear-green-50 dark:to-chatbear-green-950/20 opacity-50"></div>
@@ -26,10 +40,19 @@ export function Hero() {
             </p>
             
             <div className="flex flex-wrap space-x-0 space-y-3 sm:space-x-3 sm:space-y-0 pt-2">
-              <Button size="lg" className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="bg-chatbear-green-500 hover:bg-chatbear-green-600 text-white w-full sm:w-auto"
+                onClick={handleAgendarDemonstracao}
+              >
                 Agendar demonstração
               </Button>
-              <Button size="lg" variant="outline" className="border-chatbear-green-500 text-chatbear-green-600 hover:bg-chatbear-green-50 dark:text-chatbear-green-400 dark:hover:bg-chatbear-green-900/20 w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-chatbear-green-500 text-chatbear-green-600 hover:bg-chatbear-green-50 dark:text-chatbear-green-400 dark:hover:bg-chatbear-green-900/20 w-full sm:w-auto"
+                onClick={handleConhecerSolucoes}
+              >
                 Conhecer soluções
               </Button>
             </div>
