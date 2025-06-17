@@ -41,7 +41,7 @@ export function Hero() {
                 <img alt="Avatar" className="rounded-full border-2 border-background w-8 h-8" src="https://i.pinimg.com/736x/ca/f0/00/caf00053d9b5ddd7a2d2ebd399068eea.jpg" />
               </div>
               <div className="text-sm">
-                <span className="text-muted-foreground">Mais de 10.000 empresas já utilizam</span>
+                <span className="text-muted-foreground">Mais de 1.000 empresas já utilizam</span>
               </div>
             </div>
           </div>
